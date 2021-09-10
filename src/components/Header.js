@@ -1,8 +1,16 @@
+import Image from "next/image";
+
 function Header() {
   return (
-    <header>
-      <h2 className="text-5xl">I am header</h2>
-    </header>
+    <heade className="">
+      <h2 className="text-3xl">I am header</h2>
+      <Image
+        className="object-contain"
+        src="/images/hulu-logo.png"
+        width={200}
+        height={100}
+      />
+    </heade>
   );
 }
 
