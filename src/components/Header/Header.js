@@ -1,3 +1,4 @@
+import { HomeIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import HeaderItem from "./HeaderItem";
 
@@ -5,7 +6,7 @@ function Header() {
   return (
     <heade className="">
       <div>
-        <HeaderItem title="HOME" />
+        <HeaderItem title="HOME" Icon={HomeIcon} />
       </div>
       <Image
         className="object-contain"
