@@ -20,11 +20,11 @@ function Header() {
         <HeaderItem title="SEARCH" Icon={SearchIcon} />
         <HeaderItem title="ACCOUNT" Icon={UserIcon} />
       </div>
-      <div>
+      <div className="m-0 p-0">
         <Image
-          className="object-contain m-0 p-0"
+          className="object-contain "
           src="/images/hulu-logo.png"
-          width={150}
+          width={120}
           height={100}
         />
       </div>
