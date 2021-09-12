@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import requests from "../../utils/requests";
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav";
+import Results from "../components/Results/Results";
 
-export default function Home() {
+export default function Home({ results }) {
+  // console.log(results);
   return (
     <div className="">
       <Head>
@@ -19,6 +22,25 @@ export default function Home() {
       <Nav />
 
       {/* Results */}
+      <Results results={results} />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const genre = context.query.genre;
+
+  // make request to database
+  const req = await fetch(
+    `https://api.themoviedb.org/3${
+      requests[genre]?.url || requests.getTrending.url
+    }`
+  );
+  const res = await req.json();
+
+  return {
+    props: {
+      results: res.results,
+    },
+  };
 }
