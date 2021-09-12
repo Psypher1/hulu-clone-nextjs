@@ -9,7 +9,7 @@ export default function Nav() {
         {Object.entries(requests).map(([key, { title }]) => (
           <h2
             key={key}
-            onClick={() => router.push(`/?genre`)}
+            onClick={() => router.push(`/?genre=${key}`)}
             className="last:pr-10 cursor-pointer transition duration-100 transform hover:scale-125 hover:text-gray-50 active:text-red-500"
           >
             {title}
