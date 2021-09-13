@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import requests from "../../utils/requests";
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav";
@@ -31,12 +30,12 @@ export async function getServerSideProps(context) {
   const genre = context.query.genre;
 
   // make request to database
-  const req = await fetch(
+  const request = await fetch(
     `https://api.themoviedb.org/3${
       requests[genre]?.url || requests.getTrending.url
     }`
   );
-  const res = await req.json();
+  const res = await request.json();
 
   return {
     props: {
